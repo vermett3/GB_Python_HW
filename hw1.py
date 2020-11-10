@@ -8,11 +8,11 @@
 a = 10
 b = 15
 print("Переменные a и b - ", a, b)
-string1 = input("Введите первую строку ")
-number1 = int(input("Введите первое число "))
-string2 = input("Введите вторую строку ")
-number2 = int(input("Введите второе число "))
-print("Введеные значения - %10s %5d %10s %5d" % (string1, number1, string2, number2))
+string1 = input("Введите первую строку: ")
+number1 = int(input("Введите первое число: "))
+string2 = input("Введите вторую строку: ")
+number2 = int(input("Введите второе число: "))
+print("Введено - %10s %5d %10s %5d" % (string1, number1, string2, number2))
 
 '''
 Пользователь вводит время в секундах. 
@@ -21,7 +21,7 @@ print("Введеные значения - %10s %5d %10s %5d" % (string1, number
 Используйте форматирование строк. 
 '''
 
-time = int(input("Введите время в секундах "))
+time = int(input("Введите время в секундах: "))
 hours = time // 3600
 minutes = (time - hours * 3600) // 60
 seconds = time - (hours * 3600 + minutes * 60)
@@ -34,7 +34,7 @@ print(f"Время в формате чч:мм:сс   {hours} : {minutes} : {sec
 Считаем 3 + 33 + 333 = 369
 '''
 
-n = int(input("Введите число - "))
+n = int(input("Введите число N - "))
 total = (n + int(str(n) + str(n)) + int(str(n) + str(n)+ str(n)))
 print("Сумма чисел n + nn + nnn - %d" % total)
 '''
@@ -42,7 +42,7 @@ print("Сумма чисел n + nn + nnn - %d" % total)
 Найдите самую большую цифру в числе.
 Для решения используйте цикл while и арифметические операции.
 '''
-n = abs(int(input("Введите целое положительное число ")))
+n = abs(int(input("Введите целое положительное число: ")))
 max = n % 10
 while n >= 1:
     n = n // 10
@@ -51,7 +51,7 @@ while n >= 1:
     if n > 9:
         continue
     else:
-        print("Максимальное цифра в числе ", max)
+        print("Максимальное цифра в числе: ", max)
         break
 '''
 Запросите у пользователя значения выручки и издержек фирмы.
@@ -65,12 +65,12 @@ while n >= 1:
 и определите прибыль фирмы в расчете на одного сотрудника.
 '''
 
-profit = float(input("Введите выручку фирмы "))
-costs = float(input("Введите издержки фирмы "))
+profit = float(input("Введите выручку фирмы: "))
+costs = float(input("Введите издержки фирмы: "))
 if profit > costs:
-    print(f"Фирма работает с прибылью. Рентабельность выручки составила {profit / costs:.2f}")
-    workers = int(input("Введите количество сотрудников фирмы "))
-    print(f"прибыль в расчете на одного сторудника сотавила {profit / workers:.2f}")
+    print(f"Фирма работает с прибылью. Рентабельность выручки составила: {profit / costs:.2f}")
+    workers = int(input("Введите количество сотрудников фирмы: "))
+    print(f"прибыль в расчете на одного сторудника соcтавила: {profit / workers:.2f}")
 elif profit == costs:
     print("Фирма работает в ноль")
 else:
@@ -87,12 +87,11 @@ else:
 выводить одно натуральное число — номер дня.
 '''
 
-a = int(input("Введите результаты пробежки первого дня в км "))
-b = int(input("Введите общий желаемый результат в км "))
-result_days = 1
+a = int(input("Введите результаты пробежки первого дня в км: "))
+b = int(input("Введите общий желаемый результат в км: "))
+result_days = 0
 result_km = a
-while result_km < b:
-        a = a + 0.1 * a
-        result_days += 1
-        result_km = result_km + a
+while b - a > 0:
+    a = a + (a * 0.1)
+    result_days += 1
 print(f"Вы достигнете требуемых показателей на %.d день" % result_days)
